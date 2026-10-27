@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "mode": "specification_only",
+  "source_language": "zh",
+  "target_language": "en",
+  "asr": {
+    "backend": "openai-whisper",
+    "checkpoint_path": null,
+    "task": "transcribe",
+    "device": "cpu"
+  },
+  "mt": {
+    "backend": "transformers-nllb",
+    "model_id": "facebook/nllb-200-distilled-600M",
+    "revision": null,
+    "source_code": "zho_Hans",
+    "target_code": "eng_Latn"
+  },
+  "tts": {
+    "backend": "melotts",
+    "language": "EN",
+    "speaker_id": null,
+    "checkpoint_path": null
+  },
+  "evaluation": {
+    "asr_checkpoint": null,
+    "metrics": [],
+    "reference_required": true
+  },
+  "seed": 0,
+  "notes": "配置合同，未实现完整级联；null 必须在真实运行前选择，不能隐式下载。"
+}

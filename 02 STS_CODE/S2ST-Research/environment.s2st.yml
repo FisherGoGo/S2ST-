@@ -1,0 +1,22 @@
+# Windows GPU environment; direct dependencies pinned on 2026-10-27.
+# CUDA wheels: https://pytorch.org/get-started/previous-versions/#v291
+name: s2st
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11.18
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.9.1+cu128
+      - torchaudio==2.9.1+cu128
+      - ipykernel==7.4.0
+      - numpy==2.4.6
+      - scipy==1.17.1
+      - pandas==3.1.0
+      - matplotlib==3.11.2
+      - librosa==0.11.0
+      - soundfile==0.14.0
+variables:
+  PYTHONNOUSERSITE: "1"

@@ -1,0 +1,9 @@
+[project]
+name = "s2st-lab"
+version = "0.1.0"
+description = "Local S2ST research scaffolding; no model downloads"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,38 @@
+{
+	"nodes":[
+		{"id":"66f62d1807d3821a","type":"group","x":0,"y":1520,"width":2160,"height":260,"color":"6","label":"持续积累｜用原文和实验修正自己的理解"},
+		{"id":"64a3f18ab4fab299","type":"group","x":0,"y":240,"width":660,"height":520,"color":"5","label":"01 · 基础知识｜听懂模型的输入与输出"},
+		{"id":"e22bc966d9352957","type":"group","x":750,"y":240,"width":660,"height":520,"color":"6","label":"02 · 技术路线｜看模块怎样连接"},
+		{"id":"8edcc26c0f6c7256","type":"group","x":1500,"y":240,"width":660,"height":520,"color":"2","label":"03 · 代表模型｜带着架构问题阅读"},
+		{"id":"e661f4c935e8a5a8","type":"group","x":0,"y":900,"width":660,"height":520,"color":"4","label":"04 · 语音生成｜你的研究主线"},
+		{"id":"efe77b201dc216c0","type":"group","x":750,"y":900,"width":660,"height":520,"color":"3","label":"05 · 质量评价｜检验生成选择"},
+		{"id":"8b2df81cc399a681","type":"group","x":1500,"y":900,"width":660,"height":520,"color":"5","label":"06 · 实验实践｜先留下可追踪产物"},
+		{"id":"aaf2320646108059","type":"text","text":"# S2ST 科研导览\n\n跨语言语音生成：先看任务与数据流，再按问题深入模型。\n\n上排看全貌，下排深入生成、评价与实验；点击卡片内链接打开笔记。箭头表示建议探索方向。","x":0,"y":0,"width":1410,"height":150},
+		{"id":"c97d82d63e75655b","type":"text","text":"## 波形 → 特征 → 序列\n\n先看音频怎样成为张量，再理解编码器与解码器。\n\n- [[S2ST-Research/01-基础知识/数字音频基础|数字音频：采样率、波形与 Mel]]\n- [[S2ST-Research/01-基础知识/Transformer与Seq2Seq|Transformer / Seq2Seq：张量与生成]]","x":20,"y":290,"width":620,"height":210},
+		{"id":"5379fb424159067c","type":"text","text":"## 把三个基础任务分清\n\n输入、输出不同，训练目标与推理过程也不同。\n\n- [[S2ST-Research/01-基础知识/语音识别-ASR|ASR：源语音 → 源文字]]\n- [[S2ST-Research/01-基础知识/机器翻译-MT|MT：源文字 → 目标文字]]\n- [[S2ST-Research/01-基础知识/语音合成-TTS|TTS：目标文字 → 目标语音]]","x":20,"y":510,"width":620,"height":220},
+		{"id":"c9c0b7c3decdd9a7","type":"text","text":"## 决定生成什么表示\n\n压缩了什么信息？时长从哪里来？最后由谁恢复波形？\n\n- [[S2ST-Research/01-基础知识/语音编码与离散表示|语音编码：Mel、units 与 codec]]\n- [[S2ST-Research/01-基础知识/声码器与波形生成|声码器：表示 → 可听波形]]","x":20,"y":950,"width":620,"height":210},
+		{"id":"ee0e901830e0e7bb","type":"text","text":"## 从原理走向可用生成器\n\n固定目标文字，观察内容、节奏、音色与生成稳定性。\n\n- [[S2ST-Research/03-模型研究/VITS|VITS：潜变量、时长与波形生成]]\n- [[S2ST-Research/03-模型研究/MeloTTS|MeloTTS：文本前端与实际合成]]\n- [[S2ST-Research/05-质量评价/音色与情感保留|生成条件：谁在说、怎样说]]","x":20,"y":1170,"width":620,"height":220},
+		{"id":"1f7804e834f59743","type":"file","file":"S2ST-Research/07-实验/第一次实践.md","subpath":"#这次练习要留下什么","x":1500,"y":0,"width":660,"height":150,"color":"4"},
+		{"id":"616ed210456061fb","type":"text","text":"## 先判断系统在做什么\n\n区分任务、训练耦合、中间表示和离线 / 流式。\n\n- [[S2ST-Research/00-领域地图/领域总览|领域总览：从一段录音出发]]\n- [[S2ST-Research/00-领域地图/技术路线分类|分类地图：用四个轴分析架构]]","x":770,"y":290,"width":620,"height":210},
+		{"id":"558ffd3b83e2d659","type":"text","text":"## 沿数据流比较架构\n\n生成语音可以经过硬文本、频谱、units 或连续隐藏状态。\n\n- [[S2ST-Research/02-技术路线/级联式S2ST|级联式：ASR → MT → TTS]]\n- [[S2ST-Research/02-技术路线/直接式S2ST|直接式：频谱与离散单元]]\n- [[S2ST-Research/02-技术路线/混合式与统一模型|组合式与统一多任务模型]]\n- [[S2ST-Research/02-技术路线/技术路线对比|路线对比：需要控制哪些条件]]","x":770,"y":510,"width":620,"height":220},
+		{"id":"04523e691b6bd01c","type":"text","text":"## 经典直接式与两阶段生成\n\n每次选一个模型，画清训练与推理的数据流。\n\n- [[S2ST-Research/03-模型研究/Translatotron|Translatotron：目标频谱生成]]\n- [[S2ST-Research/03-模型研究/Translatotron-2|Translatotron 2：语言与声学分工]]\n- [[S2ST-Research/03-模型研究/S2UT|S2UT：离散单元翻译]]\n- [[S2ST-Research/03-模型研究/UnitY|UnitY：文本先行的两阶段生成]]","x":1520,"y":290,"width":620,"height":210},
+		{"id":"de45a194e4887770","type":"text","text":"## 统一、组合与流式扩展\n\n分别记录任务覆盖、模块复用和增量读写机制。\n\n- [[S2ST-Research/03-模型研究/SeamlessM4T|SeamlessM4T：统一语音与文本任务]]\n- [[S2ST-Research/03-模型研究/SeamlessM4T-v2|SeamlessM4T v2：UnitY2]]\n- [[S2ST-Research/03-模型研究/ComSpeech|ComSpeech：适配与表示对齐]]\n- [[S2ST-Research/03-模型研究/SeamlessStreaming|SeamlessStreaming：边听边译]]","x":1520,"y":510,"width":620,"height":220},
+		{"id":"31635af21b41cbdc","type":"text","text":"## 译对了吗？听得清吗？\n\n把语义与可懂度拆开，保留评价 ASR 引入误差的可能。\n\n- [[S2ST-Research/05-质量评价/评价体系总览|评价体系：按研究问题选择证据]]\n- [[S2ST-Research/05-质量评价/语义与翻译质量|语义：ASR-BLEU、chrF 与 COMET]]","x":770,"y":950,"width":620,"height":210},
+		{"id":"b96555f12eab7cac","type":"text","text":"## 找原始证据\n\n- [[S2ST-Research/04-论文阅读/论文索引|论文索引：题录与本地证据卡]]\n- [[S2ST-Research/04-论文阅读/数据集与基准索引|数据集与评价基准]]\n- [[S2ST-Research/04-论文阅读/文献关系与发展脉络|文献关系：继承与问题联系]]","x":20,"y":1570,"width":680,"height":190},
+		{"id":"03548211eb2edde9","type":"text","text":"## 形成综述论证\n\n- [[S2ST-Research/06-综述写作/相关综述索引|相关综述与方法回顾]]\n- [[S2ST-Research/06-综述写作/综述提纲|暂定综述：架构、生成方法与质量评价]]\n- [[S2ST-Research/08-研究思考/我的疑问|我的疑问：保留位置、猜测与验证]]","x":740,"y":1570,"width":680,"height":190},
+		{"id":"3da63c87bd987a10","type":"text","text":"## 把新问题带回地图\n\n- [[S2ST-Research/08-研究思考/尚未解决的问题|尚未解决的问题]]\n- [[S2ST-Research/08-研究思考/研究方向与想法|研究假设与最小对照]]\n- [[S2ST-Research/00-领域地图/导览图使用说明|如何打开、缩放与维护这张导览]]","x":1460,"y":1570,"width":680,"height":190},
+		{"id":"af672c20aeda6eb7","type":"text","text":"## 声音自然吗？表达保留了吗？\n\n内容、自然度、音色与情感分别比较，记录适用边界。\n\n- [[S2ST-Research/05-质量评价/语音自然度与音质|自然度与音质：自查、听测与预测器]]\n- [[S2ST-Research/05-质量评价/音色与情感保留|音色、情感与韵律保留]]\n- [[S2ST-Research/05-质量评价/评价指标对比|指标对比：输入、参考与限制]]","x":770,"y":1170,"width":620,"height":220},
+		{"id":"61d5637693028521","type":"text","text":"## 从组件到级联基线\n\n先分别验证识别、翻译和合成，再检查接口与错误传播。\n\n- [[S2ST-Research/03-模型研究/Whisper|Whisper：本地语音识别]]\n- [[S2ST-Research/03-模型研究/NLLB-200|NLLB-200：中英文字翻译]]\n- [[S2ST-Research/03-模型研究/传统级联系统|级联系统：连接 ASR / MT / TTS]]","x":1520,"y":950,"width":620,"height":210},
+		{"id":"2129e04d9663d1df","type":"text","text":"## 运行、记录，再比较\n\n真实模型尚未部署；未测项继续保留“未运行 / 未测”。\n\n- [[S2ST-Research/07-实验/环境与资源准备|运行之前：环境、权重与资源]]\n- [[S2ST-Research/07-实验/实验路线与比较协议|比较协议：输入、控制变量与产物]]\n- [[S2ST-Research/07-实验/实验记录模板|实验记录：命令、输出与失败日志]]\n- [[S2ST-Research/07-实验/README|实验入口：源码位置与当前能力]]","x":1520,"y":1170,"width":620,"height":220}
+	],
+	"edges":[
+		{"id":"b1fa611527ae87e7","fromNode":"64a3f18ab4fab299","fromSide":"right","toNode":"e22bc966d9352957","toSide":"left","color":"5","label":"分类"},
+		{"id":"07b352dd3df1f034","fromNode":"e22bc966d9352957","fromSide":"right","toNode":"8edcc26c0f6c7256","toSide":"left","color":"6","label":"实例"},
+		{"id":"5af09961874a03a1","fromNode":"64a3f18ab4fab299","fromSide":"bottom","toNode":"e661f4c935e8a5a8","toSide":"top","color":"4","label":"深入生成"},
+		{"id":"cfe274d9cc352e9f","fromNode":"e22bc966d9352957","fromSide":"bottom","toNode":"efe77b201dc216c0","toSide":"top","color":"3","label":"按任务评价"},
+		{"id":"27c754bb1a5c2374","fromNode":"8edcc26c0f6c7256","fromSide":"bottom","toNode":"8b2df81cc399a681","toSide":"top","color":"2","label":"落到实践"},
+		{"id":"6a861e3bd9ab4e13","fromNode":"e661f4c935e8a5a8","fromSide":"right","toNode":"efe77b201dc216c0","toSide":"left","color":"4","label":"检验"},
+		{"id":"5697ecffb1639761","fromNode":"efe77b201dc216c0","fromSide":"right","toNode":"8b2df81cc399a681","toSide":"left","color":"3","label":"比较"},
+		{"id":"6f1aa912d29bb196","fromNode":"efe77b201dc216c0","fromSide":"bottom","toNode":"66f62d1807d3821a","toSide":"top","color":"6","label":"回到原文与记录"}
+	]
+}

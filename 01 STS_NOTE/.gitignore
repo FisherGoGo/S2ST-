@@ -1,0 +1,8 @@
+# Local workspace state; retain deliberate vault settings and note metadata.
+.obsidian/workspace*.json
+.obsidian/workspace*.json.bak-*
+.trash/
+.DS_Store
+S2ST-Research/09-附件/*.wav
+S2ST-Research/09-附件/*.mp3
+S2ST-Research/09-附件/*.mp4
